@@ -57,7 +57,7 @@ amazon_result = False
 amazon_count = 0
 while amazon_result is False and amazon_count <= 10:
     try:
-        amazon_price, URL = searchAmazon(search, requests, BeautifulSoup, driver)
+        amazon_price, URL_a = searchAmazon(search, requests, BeautifulSoup, driver)
         amazon_result = True
         amazon_count += 1
     except (AttributeError):
@@ -70,4 +70,4 @@ print(URL)
 # searchBestBuy(search, BeautifulSoup, driver)
 
 from price_comparison import comparePrices
-comparePrices(eBay_price, amazon_price, URL_e, URL)
+comparePrices(eBay_price, amazon_price, URL_e, URL_a)
