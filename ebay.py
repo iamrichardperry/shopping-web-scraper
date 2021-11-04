@@ -1,9 +1,8 @@
 def searcheBay(search, requests, BeautifulSoup):
     print('Gathering eBay listings...')
-    URL_e = 'https://www.ebay.com/sch/i.html?_from=R40&_trksid=p2334524.m570.l1313.TR12.TRC2.A0.H0.XApple+iPhone.TRS0&_nkw=' + search
+    URL_e = 'https://www.ebay.com/sch/i.html?_nkw=' + search
     page = requests.get(URL_e)
-
-    # parse this downloaded HTML (BeautifulSoup provides to scrape text from this object)
+    # parse this downloaded HTML 
     soup = BeautifulSoup(page.content, 'html.parser')
     # filtering
     results = soup.find(id='mainContent')
